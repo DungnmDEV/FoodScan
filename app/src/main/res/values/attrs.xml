@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="BaseRatingBar">
+        <attr name="srb_numStars" format="integer" />
+        <attr name="srb_minimumStars" format="float" />
+        <attr name="srb_rating" format="float" />
+        <attr name="srb_starPadding" format="dimension" />
+        <attr name="srb_drawableEmpty" format="reference" />
+        <attr name="srb_drawableFilled" format="reference" />
+        <attr name="srb_isIndicator" format="boolean" />
+        <attr name="srb_scrollable" format="boolean" />
+        <attr name="srb_clickable" format="boolean" />
+        <attr name="srb_clearRatingEnabled" format="boolean" />
+        <attr name="srb_starWidth" format="dimension" />
+        <attr name="srb_starHeight" format="dimension" />
+        <attr name="srb_stepSize" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="SeekBarIndicatorProgress">
+        <attr name="IndicatorTextColor" format="color" />
+        <attr name="IndicatorTextSize" format="integer|dimension"/>
+        <attr name="IndicatorTextPadding" format="dimension" />
+        <attr name="showTooltipText" format="boolean"/>
+        <attr name="IndicatorBackgroundColor" format="color" />
+        <attr name="steps" format="integer|dimension"/>
+        <attr name="IndicatorTextFont" format="reference"/>
+
+    </declare-styleable>
+
+    <declare-styleable name="TextViewOutline">
+        <attr name="outlineSize" format="dimension"/>
+        <attr name="outlineColor" format="color|reference"/>
+        <attr name="android:shadowRadius"/>
+        <attr name="android:shadowDx"/>
+        <attr name="android:shadowDy"/>
+        <attr name="android:shadowColor"/>
+    </declare-styleable>
+
+    <declare-styleable name="IndicatorView">
+        <attr name="max_count" format="integer" />
+        <attr name="spacing" format="dimension" />
+        <attr name="radius" format="dimension" />
+        <attr name="active_color" format="color" />
+        <attr name="default_color" format="color" />
+        <attr name="active_count" format="integer" />
+        <attr name="scale_value" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="CircularProgressBar">
+        <attr name="circleWidth" format="dimension"/>
+        <attr name="backgroundCircleColor" format="color"/>
+        <attr name="foregroundCircleColor" format="color"/>
+        <attr name="progress" format="integer"/>
+        <attr name="maxProgress" format="integer"/>
+    </declare-styleable>
+
+<!--    <declare-styleable name="ImageEditorView">-->
+<!--        <attr name="cropBorderWidth" format="dimension" />-->
+<!--        <attr name="cropBorderColor" format="color" />-->
+<!--    </declare-styleable>-->
+
+    <declare-styleable name="SimpleImageView">
+        <attr name="cropBorderWidth" format="dimension" />
+        <attr name="cropBorderColor" format="color" />
+    </declare-styleable>
+</resources>

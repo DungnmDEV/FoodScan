@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name" translatable="false">Base App</string>
+
+    <string name="loading">Loading</string>
+    <string name="next">Next</string>
+
+    <string name="this_action_can_contain_ads">This action can contain ads</string>
+    <string name="do_you_like_the_app">Do you like the app?</string>
+    <string name="content_rate_0">Let us know your experience</string>
+    <string name="content_rate_1">Please give us some feedback</string>
+    <string name="content_rate_2">Please give us some feedback</string>
+    <string name="content_rate_3">Please give us some feedback</string>
+    <string name="content_rate_4">Thanks for your feedback</string>
+    <string name="content_rate_5">Thanks for your feedback</string>
+    <string name="rate">Rate</string>
+    <string name="exit">Exit</string>
+    <string name="oh_no">Oh, no!</string>
+    <string name="we_love_you_too">We love you too!</string>
+</resources>

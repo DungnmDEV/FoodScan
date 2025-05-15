@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "136388545838",
+    "project_id": "app515---ghibli-ai",
+    "storage_bucket": "app515---ghibli-ai.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:136388545838:android:1e1356358fa9640451bebf",
+        "android_client_info": {
+          "package_name": "com.ghiblimaker.ai.magicgallery.art"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1l-8nA2rQTUXxSpUQl-laCeDMWgRujBE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
