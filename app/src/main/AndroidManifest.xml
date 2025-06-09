@@ -5,8 +5,13 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
-        android:name="com.base.app.baseapp.application.MyApplication"
+        android:name=".application.MyApplication"
         android:allowBackup="false"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -15,8 +20,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.App515GhibliAI"
+        tools:replace="android:allowBackup,android:icon,android:theme"
         tools:targetApi="31">
-
+        <activity
+            android:name=".ui.confirm.ConfirmActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.info.InfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.register.RegisterActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+        <activity
+            android:name=".ui.neww.FoodRecognitionActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
         <activity
             android:name=".ui.splash.SplashActivity"
             android:exported="true"
@@ -28,7 +55,43 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity
+            android:name=".ui.intro.IntroActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+        <activity
+            android:name=".ui.neww.MainActivity"
+            android:exported="false"
+            android:label="Past Meals" />
+        <activity
+            android:name=".ui.neww.CameraActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.neww.PredictionActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.neww.MainActivity" />
+        <activity
+            android:name=".ui.neww.EditGenderActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.neww.EditCurrentWeightActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.neww.EditGoalWeightActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.neww.EditHeightActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.neww.EditAgeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.neww.EditDaysActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.neww.DetailsActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

@@ -19,6 +19,8 @@ googleGmsGoogleServices = "4.4.2"
 firebaseAnalytics = "22.4.0"
 firebaseCrashlytics = "19.4.3"
 googleFirebaseCrashlytics = "3.0.3"
+firebaseAuth = "23.2.1"
+firebaseFirestore = "25.1.4"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -43,6 +45,8 @@ compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "glide
 review-ktx = { group = "com.google.android.play", name = "review-ktx", version.ref = "reviewKtx" }
 firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics", version.ref = "firebaseAnalytics" }
 firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics", version.ref = "firebaseCrashlytics" }
+firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuth" }
+firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore", version.ref = "firebaseFirestore" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF7F6"
+    android:orientation="vertical"
+    tools:context=".ui.info.InfoActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/inter_500"
+        android:gravity="center"
+        android:text="Xin vui lòng nhập thông tin cá nhân"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="none"
+        android:layout_marginTop="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="28dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Họ Và Tên" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_marginStart="28dp"
+                android:layout_marginEnd="100dp"
+                android:fontFamily="@font/roboto_regular"
+                android:id="@+id/edtName"
+                android:layout_marginTop="8dp"
+                android:textSize="16sp"
+                android:padding="10dp"
+                android:textColor="#1E1E1E"
+                android:background="@drawable/bg_radius_12dp_stroke2"
+                android:layout_height="wrap_content"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="28dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Tuổi" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_marginStart="28dp"
+                android:layout_marginEnd="100dp"
+                android:fontFamily="@font/roboto_regular"
+                android:layout_marginTop="8dp"
+                android:textSize="16sp"
+                android:padding="10dp"
+                android:textColor="#1E1E1E"
+                android:background="@drawable/bg_radius_12dp_stroke2"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="28dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Giới Tính" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_marginStart="28dp"
+                android:layout_marginEnd="100dp"
+                android:fontFamily="@font/roboto_regular"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"
+                android:text="Nam"
+                android:enabled="false"
+                android:focusable="false"
+                android:padding="10dp"
+                android:textColor="#1E1E1E"
+                android:background="@drawable/bg_radius_12dp_stroke2"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="28dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Số điện thoại" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_marginStart="28dp"
+                android:layout_marginEnd="100dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/roboto_regular"
+                android:textSize="16sp"
+                android:padding="10dp"
+                android:textColor="#1E1E1E"
+                android:background="@drawable/bg_radius_12dp_stroke2"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="28dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Đang mắc bệnh" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_marginStart="28dp"
+                android:layout_marginEnd="100dp"
+                android:fontFamily="@font/roboto_regular"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"
+                android:text="Đái tháo đường"
+                android:enabled="false"
+                android:focusable="false"
+                android:padding="10dp"
+                android:textColor="#1E1E1E"
+                android:background="@drawable/bg_radius_12dp_stroke2"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:backgroundTint="#34EF79"
+        android:layout_marginTop="36dp"
+        android:text="Tiếp tục"
+        android:layout_marginBottom="40dp"
+        android:id="@+id/btnNext"
+        android:paddingVertical="12dp"
+        android:gravity="center"
+        android:background="@drawable/bg_radius_12dp_stroke"/>
+
+</LinearLayout>

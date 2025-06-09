@@ -23,17 +23,23 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
         val formattedDate = SimpleDateFormat("MMM.dd.yyyy").format(Date())
-        base.archivesName = "App515-GhibliAI-v$versionName($versionCode)_${formattedDate}"
+        base.archivesName = "FoodScan-v$versionName($versionCode)_${formattedDate}"
     }
 
     buildTypes {
         debug {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
         release {
             isMinifyEnabled = true
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
     compileOptions {
@@ -81,6 +87,8 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.firebase.analytics)
     implementation(libs.firebase.crashlytics)
+    implementation(libs.firebase.auth)
+    implementation(libs.firebase.firestore)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -96,12 +104,24 @@ dependencies {
     implementation(libs.glide)
     kapt(libs.compiler)
 
-    implementation (libs.androidx.lifecycle.viewmodel.ktx)
-    implementation (libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
 
-    implementation (libs.androidx.room.runtime)
-    kapt (libs.androidx.room.compiler)
-    implementation (libs.androidx.room.ktx)
+    implementation(libs.androidx.room.runtime)
+    kapt(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
 
     implementation(libs.review.ktx)
+
+    implementation("com.google.mlkit:image-labeling:17.0.9")
+    implementation("com.tbuonomo:dotsindicator:5.1.0")
+    implementation ("com.github.mukeshsolanki.android-otpview-pinview:otpview:3.1.0")
+
+    implementation ("androidx.camera:camera-core:1.3.1")
+    implementation ("androidx.camera:camera-camera2:1.3.1")
+    implementation ("androidx.camera:camera-lifecycle:1.3.1")
+    implementation ("androidx.camera:camera-view:1.3.1")
+    implementation ("androidx.camera:camera-extensions:1.3.1")
+
+
 }
