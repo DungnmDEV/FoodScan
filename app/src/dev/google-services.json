@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "706875250953",
-    "project_id": "ghibliai-3ea04",
-    "storage_bucket": "ghibliai-3ea04.firebasestorage.app"
+    "project_number": "370793337624",
+    "project_id": "cura-2e604",
+    "storage_bucket": "cura-2e604.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:706875250953:android:51f850867c939c26419bd8",
+        "mobilesdk_app_id": "1:370793337624:android:8723f0934e857c429bc46d",
         "android_client_info": {
           "package_name": "com.base.app.baseapp"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAsqkTqscaEAk4RG3pt8j6FEnTZzZIMnlA"
+          "current_key": "AIzaSyAPbqtg1Cfm3llJSQZZNCc24KrameXm4Ns"
         }
       ],
       "services": {
