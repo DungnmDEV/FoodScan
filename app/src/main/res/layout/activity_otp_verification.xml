@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Xác thực số điện thoại"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="30dp"/>
+
+    <EditText
+        android:id="@+id/editTextPhoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập số điện thoại (VD: +84912345678)"
+        android:inputType="phone"
+        android:layout_marginBottom="15dp"/>
+
+    <Button
+        android:id="@+id/buttonSendOtp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gửi OTP"
+        android:layout_marginBottom="20dp"/>
+
+    <EditText
+        android:id="@+id/editTextOtpCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập mã OTP"
+        android:inputType="number"
+        android:visibility="gone"
+        android:layout_marginBottom="15dp"/>
+
+    <Button
+        android:id="@+id/buttonVerifyOtp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Xác minh OTP"
+        android:visibility="gone"/>
+
+</LinearLayout>

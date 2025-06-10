@@ -2,16 +2,11 @@ package com.base.app.baseapp.ui.register
 
 import android.content.Intent
 import android.util.Patterns
-import android.view.View
 import android.widget.Toast
 import com.base.app.baseapp.R
 import com.base.app.baseapp.base.BaseActivity
-import com.base.app.baseapp.data.RegisterHelper
 import com.base.app.baseapp.databinding.ActivityRegisterBinding
 import com.base.app.baseapp.ui.confirm.ConfirmActivity
-import com.base.app.baseapp.ui.home.HomeActivity
-import com.base.app.baseapp.ui.info.InfoActivity
-import com.base.app.baseapp.ui.login.LoginActivity
 import com.base.app.baseapp.utils.Utils.invisible
 import com.base.app.baseapp.utils.Utils.visible
 
@@ -37,24 +32,13 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(ActivityRegisterB
 
         binding.btnNext.setOnClickListener {
             if (validate()) {
-                RegisterHelper.registerUser(
-                    context = this,
-                    name = binding.edtName.text.toString().trim(),
-                    email = binding.edtEmail.text.toString().trim(),
-                    phone = binding.edtPhoneNumber.text.toString().trim(),
-                    password = binding.edtPassword.text.toString(),
-                    onSuccess = {
-                        val intent = Intent(this, InfoActivity::class.java)
-                        startActivity(intent)
-                    },
-                    onFailure = { error ->
-                        Toast.makeText(this, error, Toast.LENGTH_LONG).show()
-                    }
+                startActivity(
+                    Intent(this, ConfirmActivity::class.java)
+                        .putExtra("name", binding.edtName.text.toString())
+                        .putExtra("email", binding.edtEmail.text.toString())
+                        .putExtra("phone", binding.edtPhoneNumber.text.toString())
+                        .putExtra("pass", binding.edtPassword.text.toString())
                 )
-
-            }
-            if (validate()) {
-                startActivity(Intent(this, ConfirmActivity::class.java).putExtra("phone_number", binding.edtPhoneNumber.text.toString()))
             }
         }
     }
@@ -62,7 +46,6 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(ActivityRegisterB
     private fun validate(): Boolean {
         var isValid = true
 
-        // Validate Name
         val name = binding.edtName.text.toString().trim()
         if (name.length < 3) {
             binding.lnErrorName.visible()
@@ -72,7 +55,6 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(ActivityRegisterB
             binding.lnErrorName.invisible()
         }
 
-        // Validate Email
         val email = binding.edtEmail.text.toString().trim()
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             binding.lnErrorMail.visible()
@@ -82,7 +64,6 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(ActivityRegisterB
             binding.lnErrorMail.invisible()
         }
 
-        // Validate Phone Number
         val phone = binding.edtPhoneNumber.text.toString().trim()
         if (phone.length < 9 || phone.length > 11 || !phone.all { it.isDigit() }) {
             binding.lnPhoneNumber.visible()
@@ -92,7 +73,6 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(ActivityRegisterB
             binding.lnPhoneNumber.invisible()
         }
 
-        // Validate Password
         val password = binding.edtPassword.text.toString()
         if (password.length < 6) {
             binding.tvErrorPass.visible()
@@ -102,7 +82,6 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(ActivityRegisterB
             binding.tvErrorPass.invisible()
         }
 
-        // Validate Agreement
         if (!isChecked) {
             Toast.makeText(this, "Vui lòng đồng ý với điều khoản", Toast.LENGTH_SHORT).show()
             isValid = false

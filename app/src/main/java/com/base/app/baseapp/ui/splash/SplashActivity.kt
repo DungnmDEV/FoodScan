@@ -16,7 +16,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>(ActivitySplashBinding
     @SuppressLint("SetTextI18n")
     override fun initView() {
         Log.d(TAG, "initView: ")
-        startActivity(Intent(this@SplashActivity, HomeActivity::class.java))
+        startActivity(Intent(this@SplashActivity, OtpVerificationActivity::class.java))
         finish()
         if (!isTaskRoot
             && intent.hasCategory(Intent.CATEGORY_LAUNCHER)

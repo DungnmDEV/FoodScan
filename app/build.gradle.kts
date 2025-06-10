@@ -73,7 +73,7 @@ android {
         }
 
         create("product") {
-            applicationId = "com.ghiblimaker.ai.magicgallery.art"
+            applicationId = "com.base.app.baseapp"
         }
     }
 }
