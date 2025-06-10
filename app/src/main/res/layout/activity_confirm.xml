@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F1F8FD"
+    android:background="#E3FFE3"
     android:orientation="vertical"
     tools:context=".ui.confirm.ConfirmActivity">
 
@@ -69,12 +69,13 @@
         android:layout_marginHorizontal="72dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/bg_radius_12dp_stroke"
+        android:id="@+id/tvTime"
         android:gravity="center"
         android:paddingVertical="6dp"
-        android:text="Mã OTP có hiệu lực trong vòng 2 phút." />
+        android:text="Mã OTP có hiệu lực trong vòng 02:00" />
 
     <TextView
-        android:id="@+id/btnNext"
+        android:id="@+id/btnAgain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="32dp"
