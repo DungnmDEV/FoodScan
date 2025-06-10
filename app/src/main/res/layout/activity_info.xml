@@ -36,28 +36,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="28dp"
-                android:layout_marginTop="16dp"
-                android:fontFamily="@font/roboto_regular"
-                android:text="Họ Và Tên" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_marginStart="28dp"
-                android:layout_marginEnd="100dp"
-                android:fontFamily="@font/roboto_regular"
-                android:id="@+id/edtName"
-                android:layout_marginTop="8dp"
-                android:textSize="16sp"
-                android:padding="10dp"
-                android:textColor="#1E1E1E"
-                android:background="@drawable/bg_radius_12dp_stroke2"
-                android:layout_height="wrap_content"/>
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="28dp"
                 android:layout_marginTop="24dp"
                 android:fontFamily="@font/roboto_regular"
                 android:text="Tuổi" />
@@ -82,12 +60,13 @@
                 android:fontFamily="@font/roboto_regular"
                 android:text="Giới Tính" />
 
-            <EditText
+            <Spinner
                 android:layout_width="match_parent"
                 android:layout_marginStart="28dp"
                 android:layout_marginEnd="100dp"
                 android:fontFamily="@font/roboto_regular"
                 android:textSize="16sp"
+                android:id="@+id/spinner1"
                 android:layout_marginTop="8dp"
                 android:text="Nam"
                 android:enabled="false"
@@ -97,25 +76,6 @@
                 android:background="@drawable/bg_radius_12dp_stroke2"
                 android:layout_height="wrap_content"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="28dp"
-                android:layout_marginTop="24dp"
-                android:fontFamily="@font/roboto_regular"
-                android:text="Số điện thoại" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_marginStart="28dp"
-                android:layout_marginEnd="100dp"
-                android:layout_marginTop="8dp"
-                android:fontFamily="@font/roboto_regular"
-                android:textSize="16sp"
-                android:padding="10dp"
-                android:textColor="#1E1E1E"
-                android:background="@drawable/bg_radius_12dp_stroke2"
-                android:layout_height="wrap_content"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -125,13 +85,14 @@
                 android:fontFamily="@font/roboto_regular"
                 android:text="Đang mắc bệnh" />
 
-            <EditText
+            <Spinner
                 android:layout_width="match_parent"
                 android:layout_marginStart="28dp"
                 android:layout_marginEnd="100dp"
                 android:fontFamily="@font/roboto_regular"
                 android:textSize="16sp"
                 android:layout_marginTop="8dp"
+                android:id="@+id/spinner2"
                 android:text="Đái tháo đường"
                 android:enabled="false"
                 android:focusable="false"

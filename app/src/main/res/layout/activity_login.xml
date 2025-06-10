@@ -71,7 +71,7 @@
             android:background="@null"
             android:id="@+id/edtName"
             android:fontFamily="@font/roboto_regular"
-            android:hint="Họ và tên"
+            android:hint="Số điện thoại"
             android:paddingVertical="8dp"
             android:singleLine="true"
             android:textColor="#171A1F"
