@@ -113,7 +113,6 @@ dependencies {
 
     implementation(libs.review.ktx)
 
-    implementation("com.google.mlkit:image-labeling:17.0.9")
     implementation("com.tbuonomo:dotsindicator:5.1.0")
     implementation ("com.github.mukeshsolanki.android-otpview-pinview:otpview:3.1.0")
 

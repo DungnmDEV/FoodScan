@@ -14,7 +14,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
     override fun initView() {
         binding.btnNext.setOnClickListener {
             AccountHelper.login(
-                formatPhoneNumber(binding.edtName.text.toString()),
+                binding.edtName.text.toString(),
                 binding.edtPassword.text.toString()
             ) { success, msg, user ->
                 if (success) {
@@ -28,14 +28,6 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
 
         binding.btnRegister.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
-        }
-    }
-    private fun formatPhoneNumber(phone: String): String {
-        return when {
-            phone.startsWith("+84") && phone.drop(3).startsWith("0") -> "+84${phone.drop(4)}"
-            phone.startsWith("0") -> "+84${phone.drop(1)}"
-            phone.startsWith("+84") -> phone
-            else -> phone
         }
     }
 
