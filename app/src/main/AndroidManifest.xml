@@ -8,6 +8,8 @@
     <uses-feature android:name="android.hardware.camera" />
 
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
@@ -43,11 +45,6 @@
             android:screenOrientation="portrait"
             tools:ignore="DiscouragedApi,LockedOrientationActivity" />
         <activity
-            android:name=".ui.neww.FoodRecognitionActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
-        <activity
             android:name=".ui.splash.SplashActivity"
             android:exported="true"
             android:screenOrientation="portrait"
@@ -63,38 +60,7 @@
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="DiscouragedApi,LockedOrientationActivity" />
-        <activity
-            android:name=".ui.neww.MainActivity"
-            android:exported="false"
-            android:label="Past Meals" />
-        <activity
-            android:name=".ui.neww.CameraActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.neww.PredictionActivity"
-            android:exported="false"
-            android:parentActivityName=".ui.neww.MainActivity" />
-        <activity
-            android:name=".ui.neww.EditGenderActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.neww.EditCurrentWeightActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.neww.EditGoalWeightActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.neww.EditHeightActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.neww.EditAgeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.neww.EditDaysActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.neww.DetailsActivity"
-            android:exported="false" />
+
     </application>
 
 </manifest>

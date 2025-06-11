@@ -6,9 +6,11 @@
     tools:context=".ui.home.InfoFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <Button
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:id="@+id/load"
+        android:layout_gravity="center"
+        android:text="Load ảnh"/>
 
 </FrameLayout>

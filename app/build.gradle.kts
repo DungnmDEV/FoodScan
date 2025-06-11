@@ -123,5 +123,6 @@ dependencies {
     implementation ("androidx.camera:camera-view:1.3.1")
     implementation ("androidx.camera:camera-extensions:1.3.1")
 
-
+    implementation ("org.pytorch:pytorch_android:1.13.1")
+    implementation ("org.pytorch:pytorch_android_torchvision:1.13.1")
 }
