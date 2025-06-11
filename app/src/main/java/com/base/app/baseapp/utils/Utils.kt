@@ -5,8 +5,10 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.view.View
+import com.base.app.baseapp.model.UserAccount
 
 object Utils {
+    var currentUser : UserAccount? = null
 
     fun View.visible() {
         visibility = View.VISIBLE

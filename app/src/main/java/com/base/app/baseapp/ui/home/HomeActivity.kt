@@ -38,6 +38,14 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>(ActivityHomeBinding::infl
 
     }
 
+    fun selectScan(){
+        binding.vp.currentItem = 1
+    }
+
+    fun selectHistory(){
+        binding.vp.currentItem = 2
+    }
+
     inner class ViewPagerAdapter(fragmentActivity: FragmentActivity) :
         FragmentStateAdapter(fragmentActivity) {
         override fun getItemCount(): Int = 4

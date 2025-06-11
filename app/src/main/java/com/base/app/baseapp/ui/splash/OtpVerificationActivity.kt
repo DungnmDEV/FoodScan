@@ -1,6 +1,8 @@
 package com.base.app.baseapp.ui.splash
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
@@ -14,6 +16,8 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
+import com.mukeshsolanki.OnOtpCompletionListener
+import com.mukeshsolanki.OtpView
 import java.util.concurrent.TimeUnit
 
 class OtpVerificationActivity : AppCompatActivity() {
@@ -38,6 +42,26 @@ class OtpVerificationActivity : AppCompatActivity() {
         buttonSendOtp = findViewById(R.id.buttonSendOtp)
         editTextOtpCode = findViewById(R.id.editTextOtpCode)
         buttonVerifyOtp = findViewById(R.id.buttonVerifyOtp)
+
+        val editTextPhoneNumber = findViewById<OtpView>(R.id.otpView)
+
+        editTextPhoneNumber.addTextChangedListener(object :TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                Log.d("OTP", "initListeners: ${p0.toString()}")
+            }
+
+            override fun afterTextChanged(p0: Editable?) {
+            }
+
+        })
+
+        editTextPhoneNumber.setOtpCompletionListener {
+            Log.d("OTP", "initListeners: $it")
+        }
 
         // Khởi tạo Callbacks
         callbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {

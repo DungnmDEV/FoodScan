@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
     android:orientation="vertical"
-    android:background="#E0E0E0"
     tools:context=".ui.home.ScanFragment">
 
 
@@ -18,75 +18,141 @@
         android:src="@drawable/ic_back" />
 
     <RelativeLayout
+        android:id="@+id/rl"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:id="@+id/rl"
         android:layout_marginTop="60dp"
         android:layout_weight="1">
 
         <androidx.camera.view.PreviewView
             android:id="@+id/preview"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:adjustViewBounds="true"
             android:layout_margin="60dp"
-            android:src="@drawable/ic_khung"/>
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_khung" />
+
+        <ImageView
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:id="@+id/btnCap"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/btn_capture" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            android:indeterminate="true"
+            />
+
     </RelativeLayout>
 
     <LinearLayout
+        android:id="@+id/lnSHow"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:id="@+id/lnSHow"
-        android:visibility="gone"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Thực phẩm của bạn 👍🏻"
-            android:textSize="22sp"
-            android:fontFamily="@font/roboto_medium"
-            android:layout_marginTop="16dp"
             android:layout_marginStart="24dp"
-            android:textColor="#000000" />
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Thực phẩm của bạn 👍🏻"
+            android:textColor="#000000"
+            android:textSize="22sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:orientation="horizontal"
             android:layout_marginHorizontal="24dp"
-            android:gravity="center">
+            android:layout_marginTop="28dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tìm kiếm:"
                 android:layout_marginEnd="4dp"
                 android:fontFamily="@font/roboto_regular"
-                android:textSize="14sp"
-                />
+                android:text="Tìm kiếm:"
+                android:textSize="14sp" />
 
             <EditText
+                android:id="@+id/edtFind"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/edtFind"
+                android:layout_weight="1"
                 android:background="@drawable/bg_radius_6dp_stroke"
-                android:padding="6dp"
-                android:layout_weight="1"/>
+                android:padding="6dp" />
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_marginHorizontal="16dp"
-            android:layout_height="wrap_content"
             android:id="@+id/rcv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="22dp"
+            android:layout_marginHorizontal="20dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/item_food_card"/>
+            tools:listitem="@layout/item_food_card" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_radius_12dp_stroke"
+            android:backgroundTint="#88EF34"
+            android:paddingVertical="10dp"
+            android:gravity="center"
+            android:layout_marginHorizontal="20dp"
+            android:id="@+id/btnXacNhan"
+            android:textSize="16sp"
+            android:fontFamily="@font/roboto_regular"
+            android:textColor="#5D4108"
+            android:text="Xác nhận"
+            android:layout_marginBottom="20dp"
+            />
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/lnResult"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Thực phẩm của bạn 👍🏻"
+            android:textColor="#000000"
+            android:textSize="22sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvResult"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="22dp"
+            android:layout_marginHorizontal="20dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_food_card" />
+    </LinearLayout>
 </LinearLayout>

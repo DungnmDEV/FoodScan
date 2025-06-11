@@ -48,20 +48,17 @@
         android:textColor="#9095A1"
         android:textSize="14sp" />
 
-    <com.mukeshsolanki.OtpView
-        android:id="@+id/otpView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <EditText
+        android:layout_width="200dp"
+        android:background="@drawable/bg_radius_12dp_stroke2"
+        android:textSize="24sp"
+        android:gravity="center"
         android:layout_gravity="center"
-        android:layout_marginTop="40dp"
+        android:id="@+id/edtOTP"
+        android:layout_marginTop="16dp"
         android:inputType="number"
-        android:itemBackground="@drawable/bg_radius_6dp_stroke"
-        android:textAllCaps="true"
-        android:textColor="#171A1F"
-        app:OtpHideLineWhenFilled="true"
-        app:OtpItemCount="6"
-        app:OtpItemSpacing="6dp"
-        app:OtpState_filled="true" />
+        android:paddingVertical="10dp"
+        android:layout_height="wrap_content"/>
 
     <TextView
         android:layout_width="match_parent"

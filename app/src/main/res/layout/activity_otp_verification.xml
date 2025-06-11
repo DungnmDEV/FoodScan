@@ -2,10 +2,27 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="16dp"
     android:gravity="center_horizontal">
 
+    <com.mukeshsolanki.OtpView
+        android:id="@+id/otpView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:inputType="number"
+        android:itemBackground="@drawable/bg_radius_6dp_stroke"
+        android:textAllCaps="true"
+        android:textColor="#171A1F"
+        app:OtpHideLineWhenFilled="true"
+        app:OtpItemCount="6"
+        android:digits="0123456789"
+        app:OtpItemSpacing="6dp"
+        android:focusableInTouchMode="true"
+        app:OtpState_filled="true" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -5,6 +5,7 @@ import android.util.Patterns
 import android.widget.Toast
 import com.base.app.baseapp.R
 import com.base.app.baseapp.base.BaseActivity
+import com.base.app.baseapp.database.AccountHelper
 import com.base.app.baseapp.databinding.ActivityRegisterBinding
 import com.base.app.baseapp.ui.confirm.ConfirmActivity
 import com.base.app.baseapp.utils.Utils.invisible
@@ -61,7 +62,15 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(ActivityRegisterB
             binding.tvErrorMail.text = "Email không hợp lệ"
             isValid = false
         } else {
-            binding.lnErrorMail.invisible()
+            AccountHelper.isEmailUsed(email){
+                if (it){
+                    binding.lnErrorMail.visible()
+                    binding.tvErrorMail.text = "Email đã được sử dụng"
+                    isValid = false
+                }else{
+                    binding.lnErrorMail.invisible()
+                }
+            }
         }
 
         val phone = binding.edtPhoneNumber.text.toString().trim()
@@ -70,8 +79,18 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(ActivityRegisterB
             binding.tvErrorPhoneNumber.text = "Số điện thoại không hợp lệ"
             isValid = false
         } else {
-            binding.lnPhoneNumber.invisible()
+            AccountHelper.isPhoneUsed(phone){
+                if (it){
+                    binding.lnPhoneNumber.visible()
+                    binding.tvErrorPhoneNumber.text = "Số điện thoại đã được sử dụng"
+                    isValid = false
+                }else{
+                    binding.lnPhoneNumber.invisible()
+                }
+            }
         }
+
+
 
         val password = binding.edtPassword.text.toString()
         if (password.length < 6) {

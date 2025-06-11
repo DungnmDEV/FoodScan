@@ -1,13 +1,21 @@
 package com.base.app.baseapp.ui.confirm
 
+import android.content.Intent
 import android.os.CountDownTimer
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.widget.Toast
 import com.base.app.baseapp.base.BaseActivity
+import com.base.app.baseapp.database.AccountHelper
 import com.base.app.baseapp.databinding.ActivityConfirmBinding
+import com.base.app.baseapp.model.UserAccount
+import com.base.app.baseapp.ui.info.InfoActivity
+import com.base.app.baseapp.utils.Utils
 import com.google.firebase.FirebaseException
 import com.google.firebase.FirebaseTooManyRequestsException
 import com.google.firebase.auth.*
+import com.mukeshsolanki.OnOtpCompletionListener
 import java.util.concurrent.TimeUnit
 
 class ConfirmActivity : BaseActivity<ActivityConfirmBinding>(ActivityConfirmBinding::inflate) {
@@ -19,11 +27,15 @@ class ConfirmActivity : BaseActivity<ActivityConfirmBinding>(ActivityConfirmBind
     private var countdownRunning = false
     private lateinit var callbacks: PhoneAuthProvider.OnVerificationStateChangedCallbacks
 
+    private val name by lazy { intent.getStringExtra("name") ?: "" }
+    private val email by lazy { intent.getStringExtra("email") ?: "" }
+    private val phone by lazy { intent.getStringExtra("phone") ?: "" }
+    private val pass by lazy { intent.getStringExtra("pass") ?: "" }
+
+    private var checkDone = false
+
     override fun initView() {
-        val name = intent.getStringExtra("name") ?: ""
-        val email = intent.getStringExtra("email") ?: ""
-        val phone = intent.getStringExtra("phone") ?: ""
-        val pass = intent.getStringExtra("pass") ?: ""
+
 
         auth = FirebaseAuth.getInstance()
 
@@ -34,15 +46,35 @@ class ConfirmActivity : BaseActivity<ActivityConfirmBinding>(ActivityConfirmBind
     }
 
     private fun initListeners() {
-        binding.otpView.setOtpCompletionListener {
-            verifyPhoneNumberWithCode(it)
-        }
+        binding.edtOTP.addTextChangedListener(object : TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                if(p0.toString().length==6){
+                    if(checkDone){
+                        verifyPhoneNumberWithCode(p0.toString())
+                    }
+                    checkDone = true
+                }else{
+                    checkDone = false
+                }
+            }
+
+            override fun afterTextChanged(p0: Editable?) {
+            }
+
+        })
 
         binding.btnAgain.setOnClickListener {
             if (!countdownRunning) {
                 startCountdown()
                 sendVerificationCode(formatPhoneNumber(intent.getStringExtra("phone") ?: ""))
             }
+        }
+
+        binding.btnBack.setOnClickListener {
+            finish()
         }
     }
 
@@ -70,6 +102,10 @@ class ConfirmActivity : BaseActivity<ActivityConfirmBinding>(ActivityConfirmBind
                 Log.d("OTP", "onCodeSent:$verificationId")
                 storedVerificationId = verificationId
                 resendToken = token
+                if(checkDone){
+                    verifyPhoneNumberWithCode(binding.edtOTP.text.toString())
+                }
+                checkDone = true
             }
         }
     }
@@ -110,8 +146,15 @@ class ConfirmActivity : BaseActivity<ActivityConfirmBinding>(ActivityConfirmBind
         auth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    val user = task.result?.user
-                    // TODO: handle success logic here
+                    val newAccount = UserAccount(email = email, phoneNumber = phone, name = name, password = pass)
+                    AccountHelper.createAccount(newAccount){isSuccess, msg->
+                        if(isSuccess){
+                            Utils.currentUser = newAccount
+                            startActivity(Intent(this, InfoActivity::class.java))
+                        }else{
+                            Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+                        }
+                    }
                 } else {
                     val message = if (task.exception is FirebaseAuthInvalidCredentialsException)
                         "Mã OTP không hợp lệ." else

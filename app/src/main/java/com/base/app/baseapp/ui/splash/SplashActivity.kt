@@ -5,6 +5,8 @@ import android.content.Intent
 import android.util.Log
 import com.base.app.baseapp.base.BaseActivity
 import com.base.app.baseapp.databinding.ActivitySplashBinding
+import com.base.app.baseapp.ui.home.HomeActivity
+import com.base.app.baseapp.ui.intro.IntroActivity
 import com.base.app.baseapp.ui.login.LoginActivity
 
 @SuppressLint("CustomSplashScreen")
@@ -13,7 +15,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>(ActivitySplashBinding
     @SuppressLint("SetTextI18n")
     override fun initView() {
         Log.d(TAG, "initView: ")
-        startActivity(Intent(this@SplashActivity, LoginActivity::class.java))
+        startActivity(Intent(this@SplashActivity, IntroActivity::class.java))
         finish()
         if (!isTaskRoot
             && intent.hasCategory(Intent.CATEGORY_LAUNCHER)
